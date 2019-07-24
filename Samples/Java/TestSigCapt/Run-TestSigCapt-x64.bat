@@ -12,11 +12,11 @@
 @
 @echo Compiling %APP% ...
 @if not exist bin md bin
-@"C:\Program Files\Java\jdk-10.0.1\bin\javac" -classpath bin;%JAR_PATHS% -d bin %APP_SRC%
+@javac -classpath bin;%JAR_PATHS% -d bin %APP_SRC%
 @echo.
 @if not exist %APP_BIN% goto END
 @echo Run %APP% ...
-@"C:\Program Files\Java\jdk-10.0.1\bin\java" -classpath bin;%JAR_PATHS% -Djava.library.path=%DLL_PATHS%  %APP_BIN_CLASS%
+@java -classpath bin;%JAR_PATHS% -Djava.library.path=%DLL_PATHS%  %APP_BIN_CLASS%
 @goto END
 
 :END
